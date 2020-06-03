@@ -13,7 +13,7 @@ html, body{
 position:fixed;
 width:100%;
 height:100vh;
-background:#fff url('https://media.giphy.com/media/feN0YJbVs0fwA/source.gif') no-repeat center;
+background:#000 url('https://media.giphy.com/media/VseXvvxwowwCc/source.gif') no-repeat center;
 z-index:99999999;}
 
 :root{
@@ -99,7 +99,8 @@ p{
 /* --------------- navbar ----------------- */
 
 .nav{
-    background: white;
+    background-color: #7952b3;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
     padding: 0 2rem;
     width: 96%;
     height: 0rem;
@@ -108,11 +109,29 @@ p{
     transition: height 1s ease-in-out;
     position: fixed;
     z-index: 666666;
+    /* border-bottom: 2px solid #000; */
+}
+
+.nav:hover{
+    border-bottom: 2px solid #fff;
+    transition: 0.5s;
 }
 
 .nav .nav-brand .text-gray{
     animation: drop 1.5s ease;
+    color: #fff;
+    /* border-bottom: 3px solid rgb(255, 0, 0); */
+    /* border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%; */
 }
+
+.nav .nav-brand .text-gray:hover{
+    border-bottom: 3px solid rgb(255, 0, 0);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transition: 0.5s;
+}
+
 @keyframes drop {
     0% {
         opacity: 0;
@@ -144,7 +163,7 @@ p{
 
 .nav .toggle-collapse .toggle-icons i{
     font-size: 1.4rem;
-    color: var(--text-gray);
+    color:rgba(255,255,255,.85);
 }
 
 .collapse{
@@ -157,6 +176,7 @@ p{
 }
 
 .nav .nav-items .nav-link{
+    font-weight: bold;
     padding: 1.6rem 1rem;
     font-size: 1.1rem;
     position: relative;
@@ -164,6 +184,7 @@ p{
     font-size: 1.1rem;
     animation: dro 1.5s ease;
 }
+
 
 @keyframes dro {
     0% {
@@ -177,11 +198,12 @@ p{
 }
 
 .nav .nav-items .nav-link:hover{
-    background-color: var(--midnight);
+    background-color:transparent;
 }
 
 .nav .nav-items .nav-link:hover a{
     color: var(--white);
+    transition: 0.5s;
 }
 
 .nav .nav-brand a{
@@ -193,15 +215,41 @@ p{
 }
 
 .nav .social{
-    padding: 1.4rem 0
+    padding: 1.4rem 0;
+    background-color: #fff;
 }
 
 .nav .social i{
     padding: 0 .2rem;
 }
 
-.nav .social i:hover{
-    color: #a1c4cf;
+/* .nav .social i:hover{
+    color:#fff ;
+} */
+.nav .social .face:hover{
+    color:blue ;
+    background-color: #fff;
+}
+
+.nav .social .gmail:hover{
+    color:green;
+    background-color: #fff;
+}
+
+.nav .social .twitter:hover{
+    color:#2e90ff ;
+    background-color: #fff;
+}
+
+.nav .social .youtube:hover{
+    color:rgb(255, 0, 0) ;
+    background-color: #fff;
+}
+
+.nav .nav-items .active a{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
 }
 
 /* -------x------- navbar ---------x------- */
@@ -211,7 +259,7 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
-    background: url('../assets/Background-image.png');
+    background: url('https://source.unsplash.com/1600x900/?computer,programming');
     background-size: cover;
     height: 110vh;
     display: flex;
@@ -231,30 +279,43 @@ main .site-title h1, h3{
 .change_content:after{
 content:'  ' ;
 animation: changetext 15s infinite linear;
-color:#00a8ff;
+outline-color: rgb(255, 0, 0);
+/* color:#00a8ff; */
 }
 @keyframes changetext{
-0%{ content:"Websites"; }
-20%{ content:"Webpages"; }
-30%{ content:"Images"; }
-40%{ content:"Animations"; }
-50%{ content:"Popular Websites"; }
-60%{ content:"Website Templates"; } 
-70%{ content:"HTML Files"; }
-80%{ content:"CSS Files"; }
-90%{ content:"HTML & CSS of Contents"; }
-100%{ content:"HTML & CSS of Components"; }
+0%{ content:"Websites"; 
+color: rgb(0, 255, 21);}
+20%{ content:"Webpages"; 
+color: rgb(0, 4, 255);}
+30%{ content:"Images"; 
+color: rgb(255, 4, 4);}
+40%{ content:"Animations"; 
+color: chartreuse;}
+50%{ content:"Popular Websites"; 
+color: cyan;}
+60%{ content:"Website Templates";
+color: orange; } 
+70%{ content:"HTML Files"; 
+color: orangered;}
+80%{ content:"CSS Files"; 
+color: purple;}
+90%{ content:"HTML & CSS of Contents";
+color: rgb(0, 4, 255); }
+100%{ content:"HTML & CSS of Components";
+color: rgb(0, 255, 21); }
 }
 
 main .site-title .btn{
     margin: 1.8rem;
-    background: var(--sky);
+    background:blue;
+    color: #fff;
 }
 
 main .site-title .btn:hover{
-    background: transparent;
-    border: 0.5px solid var(--white);
+    background:rgb(255, 0, 0);
+    border: 0px solid var(--white);
     color: var(--white);
+    transition: 0.8s;
 }
 
 /* --------x------ Site title --------x------- */
@@ -293,9 +354,16 @@ main .blog-content .blog-see{
 
 main .blog-content .btn-blog{
     padding: .7rem 2rem;
-    background: var(--sky);
+    background: green;
+    color: #fff;
     margin: .5rem;
 }
+
+main .blog-content .btn-blog:hover{
+    background: rgb(76, 0, 255);
+    text-transform: uppercase;
+    transition:0.5s;
+}   
 
 main .blog-content .btn-all{
     padding: .7rem 2rem;
@@ -305,6 +373,12 @@ main .blog-content .btn-all{
 
 main .blog-content span{
     display: block;
+}
+
+main .blog-content span:hover{
+    color: rgb(0, 255, 21);
+    text-decoration: underline;
+    transition: 0.2s;
 }
 
 section .container .owl-nav{
@@ -359,7 +433,7 @@ main .site-content .post-content > .post-image, .post-title{
 }
 
 main .site-content .post-content > .post-image .post-info{
-    background: var(--sky);
+    background:aqua;
     padding: 1rem;
     position: absolute;
     bottom: 0%;
@@ -392,7 +466,13 @@ main .post-content .post-title a{
 .site-content .post-content .post-title .post-btn{
     border-radius: 0;
     padding: .7rem 1.5rem;
-    background: var(--sky);
+    background: chartreuse;
+}
+
+.site-content .post-content .post-title .pre{
+    border-radius: 0;
+    padding: .7rem 1.5rem;
+    background: cornflowerblue;
 }
 
 .site-content .pagination{
@@ -423,7 +503,7 @@ main .post-content .post-title a{
 }
 
 .site-content > .sidebar .category-list .list-items{
-    background: var(--sky);
+    background: rgb(255, 196, 0);
     padding: .4rem 1rem;
     margin: .8rem 0;
     border-radius: 3rem;
@@ -454,6 +534,38 @@ main .post-content .post-title a{
 
 .site-content .sidebar .popular-post .post-title a{
     font-size: 1rem;
+}
+
+.site-content .sidebar .popular-post .post-title .download{
+    font-size: 1rem;
+    padding: 8px;
+    margin: 2px 15px 0px 5px;
+    background: green;
+    color: #fff;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+.site-content .sidebar .popular-post .post-title .download:hover{
+    background: blue;
+    border: 1px solid blue;
+    transition: 0.5s;
+}
+
+.site-content .sidebar .popular-post .post-title .preview{
+    font-size: 1rem;
+    padding: 8px;
+    margin: 2px  15px 0px 5px;
+    background: blue;
+    color: #fff;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.site-content .sidebar .popular-post .post-title .preview:hover{
+    background: green;
+    border: 1px solid green;
+    transition: 0.5s;
 }
 
 .site-content .sidebar .newsletter{
@@ -493,10 +605,17 @@ main .post-content .post-title a{
 }
 
 .site-content .sidebar .popular-tags .tags .tag{
-    background: var(--sky);
+    background: blueviolet;
+    color: #fff;
+    font-weight: bold;
     padding: .4rem 1rem;
     border-radius: 3rem;
     margin: .4rem .6rem;
+}
+
+.site-content .sidebar .popular-tags .tags .tag:hover{
+    background: blue;
+    transition: 0.2s;
 }
 
 
